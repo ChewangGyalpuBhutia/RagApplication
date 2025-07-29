@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Personal Background",
+    "text": "Mendel, whose full name is Chewang Gyalpu Bhutia, is an AI enthusiast and full-stack software developer from India. He is deeply passionate about building intelligent systems that combine artificial intelligence with modern software development practices. His interests span across AI, web development, and algorithmic trading."
+  },
+  {
+    "title": "Education",
+    "text": "Mendel is currently pursuing his Master of Computer Applications (MCA) from Indira Gandhi National Open University (IGNOU), which he began in 2023 and is expected to complete by 2025. Prior to this, he completed his Bachelor of Computer Applications (BCA) from SRM University, graduating in 2023 with a strong academic record and a CGPA of 8.82."
+  },
+  {
+    "title": "Technical Skills",
+    "text": "He is proficient in programming languages like Python, JavaScript, and Java. Mendel works fluently with full-stack technologies such as Next.js, React Native, NestJS, Flask, and Django. He is also experienced with backend tools like PostgreSQL, Docker, Firebase, and AWS, giving him the versatility to manage end-to-end software systems."
+  },
+  {
+    "title": "Professional Experience",
+    "text": "Mendel has gained valuable industry experience through internships and freelance roles. At Ensemble Control Inc., he worked on backend systems and API integrations. At Swyam Eduction Ltd., he contributed to the development of educational platforms. These roles enhanced his skills in software architecture, data handling, and collaborative development."
+  },
+  {
+    "title": "Projects",
+    "text": "Chewang has worked on a variety of projects across AI, finance, and full-stack development. He built a stock price forecasting system using yfinance and Prophet, with a Next.js frontend, Flask backend, and Streamlit interface. He developed a RAG application using Hugging Face models and FAISS for document-based Q&A. His work also includes a face shape detection tool using OpenCV and deep learning models. He has fine-tuned NLP models like FLAN-T5 and BERT for text classification and question answering. In finance, he created analytics tools for stock data and portfolio tracking using Python and vectorbt. Additionally, he has delivered several full-stack web apps using Next.js, NestJS, Django, and Firebase."
+  },
+  {
+    "title": "Location",
+    "text": "Chewang Bhutia is based in Gangtok, Sikkim, India. He is primarily seeking remote opportunities and is open to collaborating with teams across different regions and time zones. His location offers a quiet and productive environment ideal for focused development and research work."
+  },
+  {
+    "title": "Quantitative Finance Interests",
+    "text": "Mendel is actively learning about quantitative finance and aims to become a quant trading developer.His work includes computing financial metrics such as XIRR and tracking portfolio performance over time."
+  },
+  {
+    "title": "Hobbies and Personal Interests",
+    "text": "Beyond technology, Chewang enjoys reading books, especially on philosophy and self-development. He practices boxing and swimming to maintain physical and mental discipline. He actively follows global and domestic market news and spends time researching advancements in AI technologies. Occasionally, he works on creative coding side projects that blend data, design, and interactivity."
+  },
+  {
+    "title": "Vision and Aspirations",
+    "text": "Mendel’s long-term goal is to build cutting-edge, AI-powered systems that solve real-world financial and analytical problems. He aspires to become a quant developer and AI researcher, contributing to the intersection of machine learning, finance, and software engineering."
+  },
+  {
+    "title": "Strengths and Unique Qualities",
+    "text": "Chewang Bhutia excels in software development, testing, and debugging, making him highly reliable across the entire development lifecycle. He is a fast learner with a strong willingness to explore new technologies and adapt to evolving tools. His versatility allows him to contribute to frontend, backend, DevOps, and AI tasks with equal proficiency. Chewang is also known for being detail-oriented, resourceful, and effective in both solo and collaborative environments."
+  },
+  {
+    "title": "Contact Information",
+    "text": "Chewang Bhutia can be reached via email at chewang369@gmail.com or by phone at +91 62977 69281. He is also available for professional connections on platforms like LinkedIn and GitHub."
+  },
+  {
+    "title": "Languages Spoken",
+    "text": "Chewang is fluent in English, Hindi, and Nepali, which helps him communicate effectively in multicultural and global teams."
+  },
+  {
+    "title": "Areas of Expertise",
+    "text": "Chewang Bhutia has developed strong expertise in a wide range of domains including frontend and backend development, testing and debugging, and data analytics. He is deeply involved in artificial intelligence and machine learning, with a growing focus on generative AI applications. His skill set also covers search engine optimization (SEO) and trading systems, particularly in exploring algorithmic and quantitative strategies. This broad knowledge base enables him to build well-rounded, intelligent, and scalable software solutions."
+  }
+]
