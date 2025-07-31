@@ -39,7 +39,7 @@ def load_and_process_data(file_path):
 
 def create_vector_store(texts):
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-mpnet-base-v2"
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
     db = FAISS.from_documents(texts, embeddings)
     return db
