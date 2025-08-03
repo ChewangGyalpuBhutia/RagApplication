@@ -5,19 +5,40 @@ from typing import List
 
 from langchain.document_loaders import JSONLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.embeddings.base import Embeddings
+from typing import Any, List
 
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
+from transformers import AutoModel, AutoTokenizer
+import torch.nn.functional as F
+import numpy as np
+import torch
 
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'True' 
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
+# --- Custom Embeddings Class ---
+class PyTorchEmbeddings(Embeddings):
+    def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name)
+        
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        inputs = self.tokenizer(texts, return_tensors="pt", padding=True, truncation=True)
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+        embeddings = F.normalize(outputs.last_hidden_state.mean(dim=1), p=2, dim=1)
+        return embeddings.tolist()
+    
+    def embed_query(self, text: str) -> List[float]:
+        return self.embed_documents([text])[0]
 
 # --- Data and RAG pipeline setup ---
 def load_and_process_data(file_path):
@@ -36,14 +57,10 @@ def load_and_process_data(file_path):
     texts = text_splitter.split_documents(documents)
     return texts
 
-
 def create_vector_store(texts):
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
+    embeddings = PyTorchEmbeddings()
     db = FAISS.from_documents(texts, embeddings)
     return db
-
 
 def initialize_qa_chain(db):
     api_key = os.getenv("GOOGLE_API_KEY")
@@ -58,7 +75,6 @@ def initialize_qa_chain(db):
         llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True
     )
 
-
 # --- FastAPI setup ---
 app = FastAPI()
 
@@ -70,21 +86,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 class QueryRequest(BaseModel):
     query: str
-
 
 class QueryResponse(BaseModel):
     answer: str
     sources: List[str]
 
-
 # Load everything at startup
 texts = load_and_process_data("dataset/dataset.json")
 db = create_vector_store(texts)
 qa_chain = initialize_qa_chain(db)
-
+print("Server ready!")
 
 @app.post("/ask", response_model=QueryResponse)
 async def ask_question(request: QueryRequest):

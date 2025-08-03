@@ -1,12 +1,26 @@
-fastapi
-pydantic
-langchain-community
-langchain
-langchain-google-genai
-python-dotenv
-google-generativeai
-uvicorn
-jq
-sentence-transformers
-faiss-cpu
+# fastapi
+# pydantic
+# langchain-community
+# langchain
+# langchain-google-genai
+# python-dotenv
+# google-generativeai
+# uvicorn
+# jq
+# sentence-transformers
+# faiss-cpu
 
+# Core Requirements
+fastapi
+uvicorn
+pydantic
+python-dotenv
+langchain
+langchain-community
+langchain-google-genai
+google-generativeai
+transformers
+torch
+faiss-cpu
+numpy
+jq
